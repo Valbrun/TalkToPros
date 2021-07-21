@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1095939519728",
+    "project_id": "talktopros-cc1f8",
+    "storage_bucket": "talktopros-cc1f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095939519728:android:b4c28714b8eabb88fcbe35",
+        "android_client_info": {
+          "package_name": "com.wv.talktopros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095939519728-4ecga4hlaf9cnt476f3224b9jkrvmbnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA3S6whWkRyQaok98MT-VY9toXuOAGujI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095939519728-4ecga4hlaf9cnt476f3224b9jkrvmbnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TalkToPro">
-        <activity android:name=".Conversation"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".Conversation" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

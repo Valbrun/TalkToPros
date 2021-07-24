@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TalkToPro</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup">SIGNUP</string>
+
+    <string-array name="planets_array">
+    <item>Docteur</item>
+    <item>Informaticien</item>
+    <item>Commercant</item>
+    <item>Avocat</item>
+</string-array>
 </resources>

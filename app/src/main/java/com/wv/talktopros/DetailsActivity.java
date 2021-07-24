@@ -5,31 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-import static android.content.ContentValues.TAG;
-
 public class DetailsActivity extends AppCompatActivity {
     TextView screen;
-    TextView fname,speciality;
+    TextView name,type,experience_space,age,uid;
     RecyclerView recyclerView;
     LinearLayout ll;
     ArrayList<Specialist> userArrayList;
@@ -37,7 +30,7 @@ public class DetailsActivity extends AppCompatActivity {
     FirebaseFirestore db;
     ProgressDialog progressDialog;
 
-
+    String userid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +38,14 @@ public class DetailsActivity extends AppCompatActivity {
         screen = findViewById(R.id.screen_pp);
         String tampon = getIntent().getStringExtra("REFE");
         screen.setText(tampon);
+        this.userid = getIntent().getStringExtra("UID");
+
 //        progressDialog = new ProgressDialog(this);
 //        progressDialog.setCancelable(false);
 //        progressDialog.setMessage("Fetching Data");
 //        progressDialog.show();
 
-        recyclerView = findViewById(R.id.recyclerview);
+        recyclerView = findViewById(R.id.recyclerview_message);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         db = FirebaseFirestore.getInstance();
@@ -65,7 +60,7 @@ public class DetailsActivity extends AppCompatActivity {
 //.orderBy("fname",Query.Direction.ASCENDING)
     private void EventChangeListener(String Value) {
 
-        db.collection("users").whereEqualTo("speciality",Value)
+        db.collection("users").whereEqualTo("type",Value)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value,
@@ -93,11 +88,14 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     public void shoo(View view) {
-        speciality = findViewById(R.id.speciality);
-        fname =  view.findViewById(R.id.fname);
-        String reference = fname.getText().toString();
+        uid = findViewById(R.id.uid);
+        name =  view.findViewById(R.id.name);
+        String reference = name.getText().toString();
+        String reference2 = uid.getText().toString();
         Intent intent = new Intent(DetailsActivity.this, Conversation.class);
         intent = intent.putExtra("REFE", reference);
+        intent = intent.putExtra("UUID", reference2);
+        intent = intent.putExtra("MYUID", this.userid);
         startActivity(intent);
     }
 

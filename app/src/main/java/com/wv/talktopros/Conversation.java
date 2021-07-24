@@ -79,6 +79,7 @@ public class Conversation extends AppCompatActivity {
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                         Toast.makeText(Conversation.this, "Sent", Toast.LENGTH_SHORT).show();
+                        text_send.setText("");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

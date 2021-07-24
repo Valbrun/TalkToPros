@@ -236,8 +236,8 @@
                     android:id="@+id/btn_inf"
                     android:layout_width="168dp"
                     android:layout_height="96dp"
+                    android:background="@drawable/box"
                     android:onClick="informaticien"
-                    android:background="@drawable/doc_box"
                     tools:layout_editor_absoluteX="2dp"
                     tools:layout_editor_absoluteY="-1dp" />
 
@@ -255,6 +255,14 @@
                     app:layout_constraintHorizontal_bias="0.87"
                     app:layout_constraintStart_toStartOf="@+id/btn_inf"
                     app:layout_constraintTop_toTopOf="@+id/btn_inf" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="49dp"
+                    android:layout_height="58dp"
+                    app:srcCompat="@drawable/asd"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="16dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
